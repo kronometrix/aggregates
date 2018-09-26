@@ -15,7 +15,7 @@ fi
 
 if [ $2 == "POST-INSTALL" ]; then
     chown -R krmx:krmx /opt/kronometrix/kernel
-    cp /opt/kronometrix/kernel/stats/etc/rc/kagg /etc/rc.d/
+    cp /opt/kronometrix/kernel/agg/etc/rc/kagg /etc/rc.d/
     /etc/rc.d/kagg onestart
 
     # install service

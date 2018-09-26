@@ -43,7 +43,7 @@ rcvar=kagg_enable
 
 load_rc_config ${name}
 
-command=/opt/kronometrix/kernel/stats/etc/kagg
+command=/opt/kronometrix/kernel/agg/etc/kagg
 start_cmd="${name}_start"
 stop_cmd="${name}_stop"
 status_cmd="${name}_status"
