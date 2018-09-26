@@ -33,39 +33,39 @@
 #
 # Add the following lines to /etc/rc.conf to enable Kronometrix
 #
-# kstats_enable="YES"
-# kstats_user="krmx"
+# kagg_enable="YES"
+# kagg_user="krmx"
 
 . /etc/rc.subr
 
-name=kstats
-rcvar=kstats_enable
+name=kagg
+rcvar=kagg_enable
 
 load_rc_config ${name}
 
-command=/opt/kronometrix/kernel/stats/etc/kstats
+command=/opt/kronometrix/kernel/stats/etc/kagg
 start_cmd="${name}_start"
 stop_cmd="${name}_stop"
 status_cmd="${name}_status"
 
-: ${kstats_enable="YES"}
-: ${kstats_user="krmx"}
-: ${kstats_args=""}
+: ${kagg_enable="YES"}
+: ${kagg_user="krmx"}
+: ${kagg_args=""}
 
-kstats_start() {
+kagg_start() {
     unset "${rc_arg}_cmd"
     local cmd
-    kstats_args="start"
-    cmd="${command} ${kstats_args}"
-    su -m ${kstats_user} -c "${cmd}" 
+    kagg_args="start"
+    cmd="${command} ${kagg_args}"
+    su -m ${kagg_user} -c "${cmd}" 
 }
 
 
-kstats_stop() {
+kagg_stop() {
     local cmd
-    kstats_args="stop"
-    cmd="${command} ${kstats_args}"
-    su -m ${kstats_user} -c "${cmd}"
+    kagg_args="stop"
+    cmd="${command} ${kagg_args}"
+    su -m ${kagg_user} -c "${cmd}"
 }
 
 
