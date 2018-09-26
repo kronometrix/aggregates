@@ -33,7 +33,7 @@
 RETVAL=0
 OS_NAME=`uname -s`
 
-BASEDIR="/opt/kronometrix/kernel"
+BASEDIR="/opt/kronometrix/kernel/agg"
 REDIS_CMD="${BASEDIR}/bin/redis-server"
 REDIS_CONF="${BASEDIR}/etc/agg.conf"
 REDISCLI_CMD="${BASEDIR}/bin/redis-cli"

@@ -33,7 +33,7 @@
 RETVAL=0
 OS_NAME=`uname -s`
 
-BASEDIR="/opt/kronometrix/kernel"
+BASEDIR="/opt/kronometrix/kernel/agg"
 HTTP_CMD="${BASEDIR}/nginx/sbin/nginx"
 HTTP_CONF="${BASEDIR}/nginx/conf/nginx.agg.conf"
 HTTP_PID="${BASEDIR}/nginx/logs/nginx.agg.pid"

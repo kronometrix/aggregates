@@ -33,45 +33,26 @@
 RETVAL=0
 OS_NAME=`uname -s`
 
-BASEDIR="/opt/kronometrix/kernel/stats/etc"
-KERNEL_HTTP_STATS="${BASEDIR}/http_stats"
-KERNEL_HTTP_AUX="${BASEDIR}/http_aux"
-KERNEL_DB_AUX="${BASEDIR}/db_aux"
-KERNEL_DB_STATS="${BASEDIR}/db_stats"
-KERNEL_DB_GREEN="${BASEDIR}/db_green"
+BASEDIR="/opt/kronometrix/kernel/agg/etc"
+KERNEL_HTTP_AGG="${BASEDIR}/http_agg"
+KERNEL_DB_AGG="${BASEDIR}/db_agg"
 
 # basedir test
 test -d ${BASEDIR} || exit 0
-test -f ${KERNEL_HTTP_STATS} || exit 0
-test -f ${KERNEL_HTTP_AUX} || exit 0
-test -f ${KERNEL_DB_AUX} || exit 0
-test -f ${KERNEL_DB_STATS} || exit 0
-test -f ${KERNEL_DB_GREEN} || exit 0
-
+test -f ${KERNEL_HTTP_AGG} || exit 
+test -f ${KERNEL_DB_AGG} || exit 0
 
 start() {
-    ${KERNEL_DB_AUX} start
+    ${KERNEL_DB_AGG} start
     sleep 1
-    ${KERNEL_DB_STATS} start
-    sleep 1
-    ${KERNEL_DB_GREEN} start
-    sleep 1
-    ${KERNEL_HTTP_AUX} start
-    sleep 1
-    ${KERNEL_HTTP_STATS} start
+    ${KERNEL_HTTP_AGG} start
 }
 
 
 stop() {
-    ${KERNEL_HTTP_STATS} stop
+    ${KERNEL_HTTP_AGG} stop
     sleep 1
-    ${KERNEL_HTTP_AUX} stop
-    sleep 1
-    ${KERNEL_DB_GREEN} stop
-    sleep 1
-    ${KERNEL_DB_STATS} stop
-    sleep 1
-    ${KERNEL_DB_AUX} stop
+    ${KERNEL_DB_AGG} stop
 }
 
 
