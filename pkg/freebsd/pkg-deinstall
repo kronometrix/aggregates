@@ -1,14 +1,14 @@
 #!/bin/sh
 
 if [ $2 == "DEINSTALL" ]; then
-    /etc/rc.d/kstats onestop >/dev/null 2>&1
+    /etc/rc.d/kagg onestop >/dev/null 2>&1
 fi
 
 if [ $2 == "POST-DEINSTALL" ]; then
-    [ -f /etc/rc.d/kstats ] && rm /etc/rc.d/kstats
+    [ -f /etc/rc.d/kagg ] && rm /etc/rc.d/kagg
 
     # uninstall service
-    SVC=kstats
+    SVC=kagg
     RC_CONF=/etc/rc.conf
     DATE=`date +"%Y%m%d_%H%M%S"`
 

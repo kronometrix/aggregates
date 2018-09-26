@@ -1,7 +1,7 @@
-name: "kstats"
+name: "kagg"
 version: "1.0.0"
-origin: "sysutils/kstats"
-comment: "Kronometrix Data Analytics Platform, Kernel Stats module"
+origin: "sysutils/kagg"
+comment: "Kronometrix Data Analytics Platform, Kernel Aggregates module"
 arch: "freebsd:10:amd64"
 desc: "A real-time, event based data analytics platform for ICT, IoT, Environmental Monitoring and Meteorology, focusing on deep domain expertise and prescriptive analytics."
 maintainer: support@kronometrix.com
